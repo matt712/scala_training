@@ -1,4 +1,4 @@
 .idea
 *.iml
 target
-DayTwo.scala
+src/main/scala/day2
