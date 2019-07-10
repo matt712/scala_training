@@ -40,7 +40,7 @@ object Exercises {
     }
     def stringMergeAndReplace(firstHalf: String, secondHalf: String, replaceThis: Char, replaceWith: Char): String ={
         val ourString = (firstHalf + secondHalf).replace(replaceThis, replaceWith)
-        return ourString
+        ourString
     }
     def addOrMult(intOne: Integer, intTwo: Integer, doYouAdd: Boolean): Integer = {
         if(intOne == 0  && intTwo == 0){
@@ -62,8 +62,7 @@ object Exercises {
     def spamOut(phrase: String, times: Integer): Unit ={
             println(phrase)
             if(times != 0){
-                var times2 = times - 1
-                spamOut(phrase, times2)
+                spamOut(phrase, times - 1)
             }
     }
     def spamSquare(phrase: String, times: Integer): Unit ={
@@ -76,8 +75,8 @@ object Exercises {
     }
     def fizzbuzz(phrase1: String, phrase2: String, iterateTo: Integer): Unit ={
         if(iterateTo != 0){
-            var fizzy =  iterateTo%5
-            var buzzy = iterateTo%3
+            val fizzy =  iterateTo%5
+            val buzzy = iterateTo%3
             fizzbuzz(phrase1, phrase2, (iterateTo -1) )
             if(fizzy == 0 && buzzy == 0){
                 print(phrase1 + phrase2 + " ")
