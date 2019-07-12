@@ -12,5 +12,11 @@ object TestApp {
     garage.checkEmployee()
     println(garage.fireEmployee(employee))
     garage.checkEmployee()
+    println(garage.addVehicle(car1))
+    garage.checkVehicles()
+    println(garage.removeVehicleByPlate("G607 DAN"))
+    garage.checkVehicles()
+    println(garage.addVehicle(car1))
+    garage.fixVehicle("G607 DAN")
   }
 }

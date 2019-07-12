@@ -12,10 +12,33 @@ class Garage(currentVehicles: ListBuffer[Vehicle], currentEmployees: ListBuffer[
   }
   def releaseVehicle(oldVehicle: Vehicle): String = {
     vehicles.remove(vehicles.indexOf(oldVehicle))
-    "Vehicle released from Garage"
+    s"Vehicle: ${oldVehicle} has been released from Garage"
   }
   def removeVehicleByPlate(searchedPlate: String): String = {
-    "lol"
+    for(x <- vehicles){
+      if(x.plate == searchedPlate){
+        println(releaseVehicle(x))
+      }
+    }
+    "Vehicle removed"
+  }
+  def fixVehicle(searchedByPlate: String): Unit = {
+    for(x <- vehicles){
+      if(x.plate == searchedByPlate){
+        println(s"Fixing vehicle: ${x.plate}")
+        Thread.sleep(3000)
+        println(s"The bill is £${calculateBill(searchedByPlate)}")
+        println(releaseVehicle(x))
+      }
+    }
+  }
+  def calculateBill(plate: String): Int = {
+      300
+  }
+  def checkVehicles(): Unit = {
+    for(x <- vehicles){
+      println(x.plate)
+    }
   }
   def addEmployee(newEmployee: Employee): String = {
     employees = employees :+ newEmployee
